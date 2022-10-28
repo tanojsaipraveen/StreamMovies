@@ -3,12 +3,17 @@
 style="width:300px" /> 
 <button (click)="getData(box.value)">Submit</button>
 <ul>
+  <div *ngIf="moviedata.results.length == 0">
+    <h3>No Data</h3>
+  </div>
+  <div *ngIf="moviedata.results.length == 0">
   <li *ngFor="let data of moviedata.results">
-  <!-- <div *ngIf="data.size != 0">
-      <a  href="{{data.url}}" target="_blank">{{data.title}}</a>
-    </div> -->
-    <a  href="{{data.url}}" target="_blank">{{data.title}} - {{data.size}}</a> 
+    <!-- <div *ngIf="data.size != 0">
+        <a  href="{{data.url}}" target="_blank">{{data.title}}</a>
+      </div> -->
+    <a href="{{data.url}}" target="_blank">{{data.title}} -{{data.size}}</a>
   </li>
+  </div>
 </ul>
 <!-- <div *ngFor="let data of moviedata.results">
   <div class=e1_13><div  class="e1_2"></div><span  class="e1_4">{{data.title}}</span><div  class="e1_5"></div><span  class="e1_6">{{data.server}}</span><div  class="e1_7"></div><span  class="e1_8">{{data.size}}</span><div  class="e1_9"></div><span  class="e1_10">{{data.quality}}</span><div  class="e1_12"></div><span  class="e1_11"><a href="{{data.url}}" target="_blank">Watch</a></span></div>
